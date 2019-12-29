@@ -27,35 +27,28 @@
           age: 30
         };
 
-        handleClick = e => {
-          //this가 무엇을 가르키느냐가 생각과 다르다
-          //render밖에서 this로 접근 불가능(클래스 함수)
-          //화살표 함수로는 접근 가능
+        handleChange = e => {
           this.setState({
-            name: "rang",
-            age: 26
+            name: e.target.value
           });
-          console.log(this.state);
-        };
-        handleMouseOver = e => {
-          console.log(e);
         };
 
-        handleCopy = e => {
-          console.log("try being original for once!");
+        handleSubmit = e => {
+          e.preventDefault();
+          console.log("form submitted.", this.state.name);
         };
 
         render() {
           return (
             <div className="app-content">
-              <h1>hi</h1>
-              <p>{parseInt(Math.random() * 10)}</p>
               <p>
-                My name is:{this.state.name} and I am {this.state.age}
+                My name is:{this.state.name} and I am
+                {this.state.age}
               </p>
-              <button onClick={this.handleClick}>Click Me </button>
-              <button onMouseOver={this.handleMouseOver}>Hover me</button>
-              <p onCopy={this.handleCopy}>What we this, we become</p>
+              <form onSubmit={this.handleSubmit}>
+                <input type="text" onChange={this.handleChange} />
+                <button>Submit</button>
+              </form>
             </div>
           );
         }
