@@ -15,7 +15,7 @@ class AddNinja extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
+    this.props.addNinja(this.state); //전달받은 props함수에 인자를 넣어 전달한다
   };
 
   render() {
