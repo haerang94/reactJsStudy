@@ -1,4 +1,5 @@
 import React from "react";
+import "./Ninja.css";
 
 // UI Component
 
