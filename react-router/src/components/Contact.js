@@ -2,9 +2,9 @@ import React from "react";
 
 const Contact = props => {
   //2초 후에 about 페이지로 이동한다
-  setTimeout(() => {
-    props.history.push("/about");
-  }, 2000);
+  // setTimeout(() => {
+  //   props.history.push("/about");
+  // }, 2000);
 
   return (
     <div className="container">
